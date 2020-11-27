@@ -1,4 +1,4 @@
-@extends('formbuilder::layout')
+@extends('formbuilder.layout')
 
 @section('content')
 <div class="">
@@ -11,16 +11,16 @@
 
                         <div class="btn-toolbar float-md-right" role="toolbar">
                             <div class="btn-group" role="group">
-                                <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-primary float-md-right btn-sm">
+                                <a href="{{ route('formbuilder.forms.index') }}" class="btn btn-primary float-md-right btn-sm">
                                     <i class="fa fa-arrow-left"></i> 
                                 </a>
-                                <a href="{{ route('formbuilder::forms.submissions.index', $form) }}" class="btn btn-primary float-md-right btn-sm">
+                                <a href="{{ route('formbuilder.forms.submissions.index', $form) }}" class="btn btn-primary float-md-right btn-sm">
                                     <i class="fa fa-th-list"></i> Submissions
                                 </a> 
-                                <a href="{{ route('formbuilder::forms.edit', $form) }}" class="btn btn-primary float-md-right btn-sm">
+                                <a href="{{ route('formbuilder.forms.edit', $form) }}" class="btn btn-primary float-md-right btn-sm">
                                     <i class="fa fa-edit"></i> Edit
                                 </a> 
-                                <a href="{{ route('formbuilder::forms.create') }}" class="btn btn-primary float-md-right btn-sm">
+                                <a href="{{ route('formbuilder.forms.create') }}" class="btn btn-primary float-md-right btn-sm">
                                     <i class="fa fa-plus-circle"></i> New Form
                                 </a>
                             </div>
@@ -39,7 +39,7 @@
                     <h5 class="card-title">
                         Details 
                         
-                        <button class="btn btn-primary btn-sm clipboard float-right" data-clipboard-text="{{ route('formbuilder::form.render', $form->identifier) }}" data-message="Copied" data-original="Copy Form URL" title="Copy form URL to clipboard">
+                        <button class="btn btn-primary btn-sm clipboard float-right" data-clipboard-text="{{ route('formbuilder.form.render', $form->identifier) }}" data-message="Copied" data-original="Copy Form URL" title="Copy form URL to clipboard">
                             <i class="fa fa-clipboard"></i> Copy Form URL
                         </button> 
                     </h5>
@@ -48,7 +48,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <strong>Public URL: </strong> 
-                        <a href="{{ route('formbuilder::form.render', $form->identifier) }}" class="float-right" target="_blank">
+                        <a href="{{ route('formbuilder.form.render', $form->identifier) }}" class="float-right" target="_blank">
                             {{$form->identifier}}
                         </a>
                     </li>

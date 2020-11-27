@@ -1,4 +1,4 @@
-@extends('formbuilder::layout')
+@extends('formbuilder.layout')
 
 @section('content')
 <div class="container-fluid">
@@ -9,7 +9,7 @@
                     <h5 class="card-title">
                         {{ $pageTitle }} ({{ $submissions->count() }})
                         
-                        <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-primary float-md-right btn-sm">
+                        <a href="{{ route('formbuilder.forms.index') }}" class="btn btn-primary float-md-right btn-sm">
                             <i class="fa fa-arrow-left"></i> Back To Forms
                         </a>
                     </h5>
@@ -43,11 +43,11 @@
                                             </td>
                                         @endforeach
                                         <td>
-                                            <a href="{{ route('formbuilder::forms.submissions.show', [$form, $submission->id]) }}" class="btn btn-primary btn-sm" title="View submission">
+                                            <a href="{{ route('formbuilder.forms.submissions.show', [$form, $submission->id]) }}" class="btn btn-primary btn-sm" title="View submission">
                                                 <i class="fa fa-eye"></i> View
                                             </a> 
 
-                                            <form action="{{ route('formbuilder::forms.submissions.destroy', [$form, $submission]) }}" method="POST" id="deleteSubmissionForm_{{ $submission->id }}" class="d-inline-block">
+                                            <form action="{{ route('formbuilder.forms.submissions.destroy', [$form, $submission]) }}" method="POST" id="deleteSubmissionForm_{{ $submission->id }}" class="d-inline-block">
                                                 @csrf 
                                                 @method('DELETE')
 

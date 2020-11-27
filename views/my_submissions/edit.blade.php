@@ -1,4 +1,4 @@
-@extends('formbuilder::layout')
+@extends('formbuilder.layout')
 
 @section('content')
 <div class="container">
@@ -9,13 +9,13 @@
                     <h5 class="card-title">
                         {{ $pageTitle }}
 
-                        <a href="{{ route('formbuilder::my-submissions.index') }}" class="btn btn-primary float-md-right btn-sm" title="Back To My Submissions">
+                        <a href="{{ route('formbuilder.my-submissions.index') }}" class="btn btn-primary float-md-right btn-sm" title="Back To My Submissions">
                             <i class="fa fa-arrow-left"></i> 
                         </a>
                     </h5>
                 </div>
 
-                <form action="{{ route('formbuilder::my-submissions.update', $submission->id) }}" method="POST" id="submitForm" enctype="multipart/form-data">
+                <form action="{{ route('formbuilder.my-submissions.update', $submission->id) }}" method="POST" id="submitForm" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     

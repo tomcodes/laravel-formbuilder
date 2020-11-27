@@ -1,4 +1,4 @@
-@extends('formbuilder::layout')
+@extends('formbuilder.layout')
 
 @section('content')
 <div class="container">
@@ -9,13 +9,13 @@
                     <h5 class="card-title">
                         {{ $pageTitle ?? '' }}
 
-                        <a href="{{ route('formbuilder::forms.index') }}" class="btn btn-sm btn-primary float-md-right">
+                        <a href="{{ route('formbuilder.forms.index') }}" class="btn btn-sm btn-primary float-md-right">
                             <i class="fa fa-arrow-left"></i> Back To My Form
                         </a>
                     </h5>
                 </div>
 
-                <form action="{{ route('formbuilder::forms.store') }}" method="POST" id="createFormForm">
+                <form action="{{ route('formbuilder.forms.store') }}" method="POST" id="createFormForm">
                     @csrf 
                     
                     <div class="card-body">

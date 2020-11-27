@@ -41,7 +41,7 @@ class FormController extends Controller
 
         $forms = Form::getForUser(auth()->user());
 
-        return view('formbuilder::forms.index', compact('pageTitle', 'forms'));
+        return view('formbuilder.forms.index', compact('pageTitle', 'forms'));
     }
 
     /**
@@ -53,12 +53,12 @@ class FormController extends Controller
     {
         $pageTitle = "Create New Form";
 
-        $saveURL = route('formbuilder::forms.store');
+        $saveURL = route('formbuilder.forms.store');
 
         // get the roles to use to populate the make the 'Access' section of the form builder work
         $form_roles = Helper::getConfiguredRoles();
 
-        return view('formbuilder::forms.create', compact('pageTitle', 'saveURL', 'form_roles'));
+        return view('formbuilder.forms.create', compact('pageTitle', 'saveURL', 'form_roles'));
     }
 
     /**
@@ -89,7 +89,7 @@ class FormController extends Controller
                     ->json([
                         'success' => true,
                         'details' => 'Form successfully created!',
-                        'dest' => route('formbuilder::forms.index'),
+                        'dest' => route('formbuilder.forms.index'),
                     ]);
         } catch (Throwable $e) {
             info($e);
@@ -116,7 +116,7 @@ class FormController extends Controller
 
         $pageTitle = "Preview Form";
 
-        return view('formbuilder::forms.show', compact('pageTitle', 'form'));
+        return view('formbuilder.forms.show', compact('pageTitle', 'form'));
     }
 
     /**
@@ -133,12 +133,12 @@ class FormController extends Controller
 
         $pageTitle = 'Edit Form';
 
-        $saveURL = route('formbuilder::forms.update', $form);
+        $saveURL = route('formbuilder.forms.update', $form);
 
         // get the roles to use to populate the make the 'Access' section of the form builder work
         $form_roles = Helper::getConfiguredRoles();
 
-        return view('formbuilder::forms.edit', compact('form', 'pageTitle', 'saveURL', 'form_roles'));
+        return view('formbuilder.forms.edit', compact('form', 'pageTitle', 'saveURL', 'form_roles'));
     }
 
     /**
@@ -163,7 +163,7 @@ class FormController extends Controller
                     ->json([
                         'success' => true,
                         'details' => 'Form successfully updated!',
-                        'dest' => route('formbuilder::forms.index'),
+                        'dest' => route('formbuilder.forms.index'),
                     ]);
         } else {
             response()->json(['success' => false, 'details' => 'Failed to update the form.']);

@@ -50,7 +50,7 @@ class SubmissionController extends Controller
         $pageTitle = "Submitted Entries for '{$form->name}'";
 
         return view(
-            'formbuilder::submissions.index',
+            'formbuilder.submissions.index',
             compact('form', 'submissions', 'pageTitle', 'form_headers')
         );
     }
@@ -75,7 +75,7 @@ class SubmissionController extends Controller
 
         $pageTitle = "View Submission";
 
-        return view('formbuilder::submissions.show', compact('pageTitle', 'submission', 'form_headers'));
+        return view('formbuilder.submissions.show', compact('pageTitle', 'submission', 'form_headers'));
     }
 
     /**
@@ -91,7 +91,7 @@ class SubmissionController extends Controller
         $submission->delete();
 
         return redirect()
-                    ->route('formbuilder::forms.submissions.index', $form_id)
+                    ->route('formbuilder.forms.submissions.index', $form_id)
                     ->with('success', 'Submission successfully deleted.');
     }
 }

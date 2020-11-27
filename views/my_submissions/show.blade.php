@@ -1,4 +1,4 @@
-@extends('formbuilder::layout')
+@extends('formbuilder.layout')
 
 @section('content')
 <div class="container">
@@ -12,15 +12,15 @@
                         
                         <div class="btn-toolbar float-md-right" role="toolbar">
                             <div class="btn-group" role="group" aria-label="First group">
-                                <a href="{{ route('formbuilder::my-submissions.index') }}" class="btn btn-primary btn-sm" title="Back To My Submissions">
+                                <a href="{{ route('formbuilder.my-submissions.index') }}" class="btn btn-primary btn-sm" title="Back To My Submissions">
                                     <i class="fa fa-arrow-left"></i> 
                                 </a>
                                 @if($submission->form->allowsEdit())
-                                    <a href="{{ route('formbuilder::my-submissions.edit', $submission) }}" class="btn btn-primary btn-sm" title="Edit this submission">
+                                    <a href="{{ route('formbuilder.my-submissions.edit', $submission) }}" class="btn btn-primary btn-sm" title="Edit this submission">
                                         <i class="fa fa-pencil"></i> 
                                     </a>
                                 @endif
-                                {{-- <form action="{{ route('formbuilder::my-submissions.destroy', [$submission->id]) }}" method="POST" id="deleteSubmissionForm_{{ $submission->id }}" class="d-inline-block">
+                                {{-- <form action="{{ route('formbuilder.my-submissions.destroy', [$submission->id]) }}" method="POST" id="deleteSubmissionForm_{{ $submission->id }}" class="d-inline-block">
                                     @csrf 
                                     @method('DELETE')
 

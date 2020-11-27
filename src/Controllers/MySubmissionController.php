@@ -41,7 +41,7 @@ class MySubmissionController extends Controller
 
         $pageTitle = "My Submissions";
 
-        return view('formbuilder::my_submissions.index', compact('submissions', 'pageTitle'));
+        return view('formbuilder.my_submissions.index', compact('submissions', 'pageTitle'));
     }
 
     /**
@@ -61,7 +61,7 @@ class MySubmissionController extends Controller
 
         $pageTitle = "View Submission";
 
-        return view('formbuilder::my_submissions.show', compact('submission', 'pageTitle', 'form_headers'));
+        return view('formbuilder.my_submissions.show', compact('submission', 'pageTitle', 'form_headers'));
     }
 
     /**
@@ -83,7 +83,7 @@ class MySubmissionController extends Controller
 
         $pageTitle = "Edit My Submission for '{$submission->form->name}'";
 
-        return view('formbuilder::my_submissions.edit', compact('submission', 'pageTitle'));
+        return view('formbuilder.my_submissions.edit', compact('submission', 'pageTitle'));
     }
 
     /**
@@ -117,7 +117,7 @@ class MySubmissionController extends Controller
             DB::commit();
 
             return redirect()
-                        ->route('formbuilder::my-submissions.index')
+                        ->route('formbuilder.my-submissions.index')
                         ->with('success', 'Submission updated.');
         } catch (Throwable $e) {
             info($e);
@@ -141,7 +141,7 @@ class MySubmissionController extends Controller
         $submission->delete();
 
         return redirect()
-                    ->route('formbuilder::my-submissions.index')
+                    ->route('formbuilder.my-submissions.index')
                     ->with('success', 'Submission deleted!');
     }
 }

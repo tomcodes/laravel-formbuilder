@@ -38,7 +38,7 @@ class RenderFormController extends Controller
 
         $pageTitle = "{$form->name}";
 
-        return view('formbuilder::render.index', compact('form', 'pageTitle'));
+        return view('formbuilder.render.index', compact('form', 'pageTitle'));
     }
 
     /**
@@ -76,7 +76,7 @@ class RenderFormController extends Controller
             DB::commit();
 
             return redirect()
-                    ->route('formbuilder::form.feedback', $identifier)
+                    ->route('formbuilder.form.feedback', $identifier)
                     ->with('success', 'Form successfully submitted.');
         } catch (Throwable $e) {
             info($e);
@@ -99,6 +99,6 @@ class RenderFormController extends Controller
 
         $pageTitle = "Form Submitted!";
 
-        return view('formbuilder::render.feedback', compact('form', 'pageTitle'));
+        return view('formbuilder.render.feedback', compact('form', 'pageTitle'));
     }
 }

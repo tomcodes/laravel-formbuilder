@@ -1,4 +1,4 @@
-@extends('formbuilder::layout')
+@extends('formbuilder.layout')
 
 @section('content')
 <div class="container">
@@ -10,7 +10,7 @@
                         Form Successfully submitted
 
                         @auth
-                            <a href="{{ route('formbuilder::my-submissions.index') }}" class="btn btn-primary btn-sm float-md-right">
+                            <a href="{{ route('formbuilder.my-submissions.index') }}" class="btn btn-primary btn-sm float-md-right">
                                 <i class="fa fa-th-list"></i> Go To My Submissions
                             </a>
                         @endauth

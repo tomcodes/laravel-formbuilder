@@ -53,7 +53,7 @@ class FormBuilderServiceProvider extends ServiceProvider
 
         // publish view files
         $this->publishes([
-            __DIR__.'/../views' => resource_path('views/vendor/formbuilder', 'formbuilder::'),
+            __DIR__.'/../views' => resource_path('views/vendor/formbuilder', 'formbuilder.'),
         ], 'formbuilder-views');
 
         // // publish public assets
