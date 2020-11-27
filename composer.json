@@ -1,10 +1,9 @@
 {
-    "name": "jazmy/jaz-form-builder",
+    "name": "tomcodes/jaz-form-builder",
     "description": "Laravel Package for Creating a Drag-and-Drop Form Builder Using JQuery Form Builder",
     "authors": [
         {
-            "name": "Jasmine Robinson",
-            "email": "jaz@jazmy.com"
+            "name": "tomcodes"
         }
     ],
     "require": {
